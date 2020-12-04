@@ -78,6 +78,8 @@ with open('/home/ben/access.csv') as access_comp:
         if speaking_delta > 0:
             neg_speaking_delta = {'name': student['name'], 'loss': speaking_delta}
             speaking_delta_list.append(neg_speaking_delta)
+            
+    # this second for loop isn't necessary; it should be built into the above loop
     total_speaking_loss_list = []
     for score in speaking_delta_list:
         total_speaking_loss_list.append(score['loss'])
